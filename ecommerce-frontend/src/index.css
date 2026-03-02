@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  /* Deep Charcoal Black - Main Background */
+  --background: 220 13% 8%;
+
+  /* Soft Ivory - Default Text */
+  --foreground: 45 30% 92%;
+
+  /* Luxury Gold - Brand Accent */
+  --primary: 45 80% 60%;
+
+  /* Elevated Dark Slate - Section Background */
+  --secondary: 220 13% 14%;
+
+  /* Soft Graphite - Card Background */
+  --card: 220 13% 12%;
+
+  /* Subtle Divider */
+  --border: 220 13% 18%;
+
+  /* Muted Silver Text */
+  --muted: 220 10% 60%;
+
+  /* Text color when background is primary */
+  --primary-foreground: 220 13% 8%;
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+
+  .text-primary {
+    color: hsl(var(--primary));
+  }
+
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+
+  .text-muted {
+    color: hsl(var(--muted));
+  }
+
+  .text-primary-foreground {
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
