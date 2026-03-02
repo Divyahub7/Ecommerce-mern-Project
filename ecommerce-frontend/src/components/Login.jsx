@@ -9,8 +9,8 @@ const Login = () => {
     password: "",
   });
 
-  const [, setError] = useState("");
-  const [, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-4">
+    <div className="min-h-[calc(100vh-100px)] flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md bg-card border border-border rounded-2xl p-8 shadow-lg">
         <h2 className="text-3xl font-bold text-center text-foreground mb-2">
           Welcome Back
@@ -51,6 +51,9 @@ const Login = () => {
 
         <p className="text-muted text-center mb-6">Login to your account</p>
 
+        {error && (
+          <p className="text-red-500 text-sm text-center mb-4">{error}</p>
+        )}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm mb-2">Email</label>
@@ -80,9 +83,10 @@ const Login = () => {
 
           <button
             type="submit"
+            disabled={loading}
             className="w-full py-3 bg-primary text-black rounded-lg font-semibold hover:opacity-90 transition"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

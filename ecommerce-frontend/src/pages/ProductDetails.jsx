@@ -28,6 +28,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -50,6 +51,16 @@ const ProductDetails = () => {
   // if (!product) {
   //   return <div className="text-center mt-20">Product Not Found</div>;
   // }
+
+  const handleAddToCart = () => {
+    addToCart(product);
+
+    setAdded(true);
+
+    setTimeout(() => {
+      setAdded(false);
+    }, 2000);
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-20">
@@ -75,9 +86,10 @@ const ProductDetails = () => {
 
           <button
             className="px-6 py-3 bg-primary text-black rounded-lg"
-            onClick={() => addToCart(product)}
+            onClick={handleAddToCart}
+            disabled={added}
           >
-            Add to Cart
+            {added ? "Added" : "Add to Cart"}
           </button>
         </div>
       </div>

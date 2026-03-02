@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
+import AboutPage from "./pages/AboutPage";
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -24,6 +25,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
 
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </main>
 

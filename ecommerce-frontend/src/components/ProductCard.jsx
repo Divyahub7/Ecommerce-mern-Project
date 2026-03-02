@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const [added, setAdded] = useState(false);
+  const handleAddToCart = () => {
+    addToCart(product);
+
+    setAdded(true);
+
+    setTimeout(() => {
+      setAdded(false);
+    }, 2000);
+  };
   return (
     <Link to={`/product/${product._id}`}>
       <div
@@ -37,10 +48,11 @@ const ProductCard = ({ product }) => {
               className="px-4 py-2 bg-primary text-black rounded-lg text-sm font-medium hover:opacity-90 transition"
               onClick={(e) => {
                 e.preventDefault();
-                addToCart(product);
+                handleAddToCart();
               }}
+              disabled={added}
             >
-              Add to Cart
+              {added ? "Added" : "Add to Cart"}
             </button>
           </div>
         </div>
