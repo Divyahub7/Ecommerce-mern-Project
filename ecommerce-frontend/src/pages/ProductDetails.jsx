@@ -3,25 +3,6 @@ import { useEffect, useState } from "react";
 import { getProductById } from "../services/productService";
 import { useCart } from "../context/useCart";
 
-// const dummyProducts = [
-//   {
-//     _id: "1",
-//     name: "Premium Headphones",
-//     description: "Immersive sound experience.",
-//     price: 4999,
-//     image:
-//       "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJlbWl1bSUyMGhlYWRwaG9uZXN8ZW58MHwwfDB8fHww",
-//   },
-//   {
-//     _id: "2",
-//     name: "Luxury Watch",
-//     description: "Timeless design crafted to perfection.",
-//     price: 8999,
-//     image:
-//       "https://media.istockphoto.com/id/1273296405/photo/beautiful-fashion-watch-with-leather-strap-in-the-shop-window.webp?a=1&b=1&s=612x612&w=0&k=20&c=_JzvyNe21ohccoqyneZm1wqUFAKEh34da74Wg2Spf2s=",
-//   },
-// ];
-
 const ProductDetails = () => {
   const { addToCart } = useCart();
   const { id } = useParams();
@@ -69,7 +50,7 @@ const ProductDetails = () => {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-[500px] object-cover rounded-xl"
+            className="w-full h-125 object-cover rounded-xl"
           />
         </div>
 

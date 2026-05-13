@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section
       className="h-[90vh] bg-cover bg-center relative"
@@ -16,7 +19,10 @@ const HeroSection = () => {
           Discover Premium Products
         </h1>
 
-        <button className="px-6 py-3 bg-primary text-black font-medium rounded-lg hover:opacity-90 transition">
+        <button
+          className="px-6 py-3 bg-primary text-black font-medium rounded-lg hover:opacity-90 transition"
+          onClick={() => navigate("/products")}
+        >
           Shop Now
         </button>
       </div>
